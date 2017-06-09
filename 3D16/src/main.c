@@ -52,6 +52,9 @@ int main(void)
 void SysTick_Handler(void)
 {
 	SystemTime++;
-	LEDRefresh();
+	if(SystemTime <= 60000)	//60SÒÔÄÚ£¬Ë¢ÐÂLED
+	{
+		LEDRefresh();
+	}
 }
 

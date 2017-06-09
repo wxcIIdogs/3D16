@@ -1,6 +1,6 @@
 #include "system.h"
 
-u32 SystemTime = 0;	//100us¼Ó1
+u32 SystemTime = 0;	//1ms¼Ó1
 
 void SystemInit(void)
 {
