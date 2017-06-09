@@ -52,7 +52,7 @@ int main(void)
 void SysTick_Handler(void)
 {
 	SystemTime++;
-	if(SystemTime <= 60000)	//60S以内，刷新LED
+	if(SystemTime <= 60000*10)	//60S以内，刷新LED
 	{
 		LEDRefresh();
 	}

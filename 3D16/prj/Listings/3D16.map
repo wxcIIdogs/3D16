@@ -660,7 +660,7 @@ Image Symbol Table
     LEDInit                                  0x0800070d   Thumb Code    76  led.o(i.LEDInit)
     LEDRefresh                               0x08000769   Thumb Code   116  led.o(i.LEDRefresh)
     ProcessFFT                               0x08000811   Thumb Code   176  fft.o(i.ProcessFFT)
-    SysTick_Handler                          0x080008c9   Thumb Code    30  main.o(i.SysTick_Handler)
+    SysTick_Handler                          0x080008c9   Thumb Code    28  main.o(i.SysTick_Handler)
     SystemClockInit                          0x080008ed   Thumb Code   134  system.o(i.SystemClockInit)
     SystemInit                               0x0800097d   Thumb Code     8  system.o(i.SystemInit)
     TimeStart                                0x08000985   Thumb Code    18  timer.o(i.TimeStart)
@@ -870,18 +870,18 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       336         32          0          1        130     233242   adc.o
-       684         22        256          8        536       3787   fft.o
-       350         12          0          0          0       2331   gpio.o
-       364         50          0          2       1024       1979   led.o
-       280         64          0          0          0      25692   main.o
+       336         32          0          1        130     233222   adc.o
+       684         22        256          8        536       3779   fft.o
+       350         12          0          0          0       2327   gpio.o
+       364         50          0          2       1024       1967   led.o
+       280         66          0          0          0      25688   main.o
         64         26        236          0       1536        792   startup_stm32f10x_md.o
-       176         16          0          4          0       1431   system.o
-        96          6          0          0          0       1140   timer.o
-      1038         96          0          0         60      28175   usart.o
+       176         16          0          4          0       1423   system.o
+        96          6          0          0          0       1136   timer.o
+      1038         96          0          0         60      28159   usart.o
 
     ----------------------------------------------------------------------
-      3392        324        524         20       3288     298569   Object Totals
+      3392        326        524         20       3288     298493   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          4          0          0          5          2          0   (incl. Padding)
 
@@ -948,9 +948,9 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      5592        432        524         20       3388     298149   Grand Totals
-      5592        432        524         20       3388     298149   ELF Image Totals
-      5592        432        524         20          0          0   ROM Totals
+      5592        434        524         20       3388     298073   Grand Totals
+      5592        434        524         20       3388     298073   ELF Image Totals
+      5592        434        524         20          0          0   ROM Totals
 
 ==============================================================================
 
