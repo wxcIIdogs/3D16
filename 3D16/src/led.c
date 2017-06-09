@@ -48,9 +48,9 @@ void UpdateDisplayBuf(u8 *high)
 		}
 	}
 	
-	for(i=0;i<256;i++)	//复制临时显存到正式显存
+	for(i=0;i<256;i++)	//复制临时显存到正式显存,取反，交换亮和不亮的位置
     {
-    	DisBuf[1][i] = DisBuf[0][i];
+    	DisBuf[1][i] = ~DisBuf[0][i];
     }
 }
 

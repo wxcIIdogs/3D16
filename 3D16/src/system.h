@@ -8,7 +8,7 @@
 void SystemInit(void);
 void SystemClockInit(void);
 void SystemDebugSet(void);
-void Delay10ms(u32 t);
+void Delay1ms(u32 t);
 
 //extern u32 SystemTime;
 extern u8 KeyValue;
