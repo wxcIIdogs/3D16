@@ -1,0 +1,11 @@
+.\objects\fft.o: ..\src\fft.c
+.\objects\fft.o: ..\src\fft.h
+.\objects\fft.o: ..\src\common.h
+.\objects\fft.o: ..\src\stm32f10x.h
+.\objects\fft.o: ..\src\core_cm3.h
+.\objects\fft.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\fft.o: ..\src\cmsis_compiler.h
+.\objects\fft.o: ..\src\cmsis_armcc.h
+.\objects\fft.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.2\Device\Include\system_stm32f10x.h
+.\objects\fft.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\fft.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
