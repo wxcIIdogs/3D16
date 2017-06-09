@@ -3,9 +3,9 @@
 .\objects\timer.o: ..\src\common.h
 .\objects\timer.o: ..\src\stm32f10x.h
 .\objects\timer.o: ..\src\core_cm3.h
-.\objects\timer.o: E:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\timer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\timer.o: ..\src\cmsis_compiler.h
 .\objects\timer.o: ..\src\cmsis_armcc.h
-.\objects\timer.o: E:\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include\system_stm32f10x.h
-.\objects\timer.o: E:\keil5\ARM\ARMCC\Bin\..\include\math.h
-.\objects\timer.o: E:\keil5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\timer.o: D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.2\Device\Include\system_stm32f10x.h
+.\objects\timer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\timer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

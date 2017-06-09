@@ -29,6 +29,13 @@ void LEDInit(void)
 	GPIOInit(GPIOB,9,GPIO_OUT,GPIO_LOW);
 }
 
+const u16 MapTable[16]=
+{
+	1<<15,1<<14,1<<13,1<<12,
+	1<<11,1<<10,1<<9,1<<8,
+	1<<7,1<<6,1<<5,1<<4,
+	1<<3,1<<2,1<<1,1<<0
+};
 
 //将16组高度信息转换为显存中的数据
 void UpdateDisplayBuf(u8 *high)
@@ -42,10 +49,16 @@ void UpdateDisplayBuf(u8 *high)
 	for(i=0;i<16;i++)
 	{
 		high[i] = high[i]>16?16:high[i];	//防止数据超过16
-		for(j=0;j<high[i];j++)			//根据高度值修改临时显存
+		/* for(j=0;j<high[i];j++)			//根据高度值修改临时显存
 		{
 			DisBuf[0][16*j+i] |= 0x0001;
+		} */
+		//更换显示面为正面
+		for(j=0;j<high[i];j++)			//根据高度值修改临时显存
+		{
+			DisBuf[0][16*j] |= MapTable[i];
 		}
+		
 	}
 	
 	for(i=0;i<256;i++)	//复制临时显存到正式显存,取反，交换亮和不亮的位置
