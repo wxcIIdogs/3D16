@@ -103,7 +103,7 @@ void ProcessFFT(void)
 	//存储16组LED的高度
 	for(pt=2;pt<34;pt+=2)
 	{
-		LEDHigh[pt/2-1] = map(dd[pt].real,0,1024,0,16);
+		LEDHigh[pt/2-1] = map(dd[pt].real,0,512,0,16);
 		//LEDHigh[pt/2-1] = dd[pt].real/16;
 	}
 	
