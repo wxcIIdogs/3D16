@@ -1,7 +1,7 @@
 #include "adc.h"
 #include "timer.h"
 
-u16 ADData[64];
+u16 ADData[65];
 u8 CollectionFinish = 0;
 
 //AD使用定时器2触发转换，转换完成后，DMA自动将数据存到ADData[64]里面，完成64次转换后，置位采集完成标志
@@ -28,7 +28,7 @@ void ADCInit(void)
 	RCC->AHBENR |= RCC_AHBENR_DMA1EN;
 	DMA1_Channel1->CPAR = (u32)&(ADC1->DR);
 	DMA1_Channel1->CMAR = (u32)ADData;
-	DMA1_Channel1->CNDTR = 64;
+	DMA1_Channel1->CNDTR = 65;
 	DMA1_Channel1->CCR |= (1<<10) | (1<<8);	//16bit
 	
 	DMA1_Channel1->CCR |= DMA_CCR1_MINC|DMA_CCR1_TCIE;	//内存地址增长，传输完成产生中断
@@ -45,7 +45,7 @@ void DMA1_Channel1_IRQHandler(void)
 	DMA1_Channel1->CCR &= ~DMA_CCR1_EN;	//禁能DMA
 	
 	DMA1_Channel1->CMAR = (u32)ADData;
-	DMA1_Channel1->CNDTR = 64;
+	DMA1_Channel1->CNDTR = 65;
 	
 	DMA1_Channel1->CCR |= DMA_CCR1_EN;	//使能DMA
 	

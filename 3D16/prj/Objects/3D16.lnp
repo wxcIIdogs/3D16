@@ -1,4 +1,5 @@
 --cpu Cortex-M3
+".\objects\startup_stm32f10x_md.o"
 ".\objects\adc.o"
 ".\objects\gpio.o"
 ".\objects\main.o"
@@ -7,7 +8,6 @@
 ".\objects\timer.o"
 ".\objects\fft.o"
 ".\objects\led.o"
-".\objects\startup_stm32f10x_md.o"
 --strict --scatter ".\Objects\3D16.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
