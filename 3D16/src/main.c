@@ -6,6 +6,7 @@
 #include "fft.h"
 #include "led.h"
 #include "stdio.h"
+
 extern u32 SystemTime;
 
 int main(void)
