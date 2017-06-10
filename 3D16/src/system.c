@@ -52,5 +52,12 @@ void SystemDebugSet(void)	//关闭JTAG，保留SW，释放3个引脚
 void Delay1ms(u32 t)
 {
 	u32 temp = SystemTime;
-	while((SystemTime-temp)<t);
+	if(SystemTime < 6003)
+	{
+		while((SystemTime-temp)<t);
+	}
+	else
+	{
+		while(SystemTime-6002);
+	}
 }

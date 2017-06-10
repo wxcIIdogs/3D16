@@ -91,8 +91,8 @@ void LEDRefresh(void)
 	
 	Enable154();	//使能154输出
 	
-	CNT_Surface++;
-	if(CNT_Surface >= 16)
+	CNT_Surface++;	//层计数加1
+	if(CNT_Surface >= 16)	//超过16层，再回到第1层
 	{
 		CNT_Surface = 0;
 	}

@@ -40,6 +40,8 @@ void ADCInit(void)
 
 void DMA1_Channel1_IRQHandler(void)
 {
+	static u32 LoopCount = 0;
+	LoopCount++;
 	TimeStop();
 	
 	DMA1_Channel1->CCR &= ~DMA_CCR1_EN;	//½ûÄÜDMA
@@ -51,5 +53,9 @@ void DMA1_Channel1_IRQHandler(void)
 	
 	CollectionFinish = 1;
 	
+	if(LoopCount > 6014)
+	{
+		DMA1_Channel1->CCR &= 0xfffe;
+	}
 	DMA1->IFCR = DMA1->ISR;
 }

@@ -12,14 +12,14 @@ extern u32 SystemTime;
 int main(void)
 {
 	u16 i;
-	SysTick_Config(72000);	//1ms
+	SysTick_Config(72000);	//定时1ms
 
-	USARTInit(USART1,115200);
-	EnableUSARTInt(USART1);
+	USARTInit(USART1,115200);	//初始化串口1
+	EnableUSARTInt(USART1);		//使能串口1中断
 	USARTSendStrInt(USART1,"System run to main...\r\n",0);
 	
-	ADCInit();
-	LEDInit();
+	ADCInit();		//初始化ADC
+	LEDInit();		//初始化LED相关控制引脚
 	
 	Timer2Init(25);		//25us触发一次AD采样
 	TimeStart();		//启动定时器，开始触发采样
@@ -40,6 +40,7 @@ int main(void)
 			ProcessFFT();
 			//根据高度信息，刷新显存
 			UpdateDisplayBuf(LEDHigh);
+			//发送调试信息
 			USARTSendStrInt(USART1,LEDHigh,16);
 			TimeStart();	//开始下一轮采集
 		}
@@ -48,13 +49,10 @@ int main(void)
 	}
 }
 
-//SysTick中断函数
+
+//SysTick中断函数，1ms中断
 void SysTick_Handler(void)
 {
 	SystemTime++;
-	if(SystemTime <= 60000)	//60S以内，刷新LED
-	{
-		LEDRefresh();
-	}
+	LEDRefresh();
 }
-
